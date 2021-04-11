@@ -8,7 +8,17 @@ function Menu(props) {
     let [showMenu, setShowMenu] = useState(false);
 
     return (
-        <main className={`menu ${showMenu ? "show-menu" : ""}`}>
+        <main className={`menu ${showMenu ? "show-menu" : ""}`}
+
+            onMouseEnter={() => {
+                setShowMenu(true)
+            }}
+
+            onMouseLeave={() => {
+                setShowMenu(false)
+            }}
+
+        >
             <div className="icon-menu">
                 <span onClick={() => setShowMenu(!showMenu)} className="icon"></span>
             </div>
