@@ -7,9 +7,9 @@ import Home from '../src/layouts/home/home'
 function App() {
   return (
     <BrowserRouter>
+      <Menu />
       <Switch>
-        <Menu />
-        <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './menu.css';
 import { Link } from 'react-router-dom'
 import logo from '../../images/min-logo.png'
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 function Menu(props) {
 
@@ -33,6 +35,18 @@ function Menu(props) {
                     <li><Link to="/" className="link"> <i className="fa fa-check-square-o"></i><p>طرح حای پیشنهادی</p></Link></li>
                     <li><Link to="/" className="link"> <i className="fa fa-street-view"></i><p>درباره ما</p></Link></li>
                 </ul>
+            </div>
+            <span className="line"></span>
+            <div className="social-menu">
+                <a href="https://www.linkedin.com/in/nitro-team" target="_blank" className="linkedin hover-effect">
+                    <i className="fa fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/nitroo_team" className="instagram hover-effect">
+                    <InstagramIcon />
+                </a>
+                <a href="#" className="gmail hover-effect">
+                    <i className="fa fa-google"></i>
+                </a>
             </div>
         </main>
 

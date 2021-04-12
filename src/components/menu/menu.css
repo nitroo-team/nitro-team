@@ -24,7 +24,7 @@
 }
 
 .menu .icon-menu .icon {
-    margin-left: 5px;
+	margin-left: 5px;
 	width: 50px;
 	height: 40px;
 	position: relative;
@@ -57,11 +57,11 @@
 	border-radius: 10px;
 }
 
-.menu .logo-menu > img{
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    object-position: center;
+.menu .logo-menu>img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	object-position: center;
 }
 
 .menu .conetent-menu {
@@ -75,7 +75,7 @@
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: flex-start;
 }
 
@@ -133,54 +133,85 @@
 	background-color: rgba(0, 0, 0, 0.08);
 }
 
-
-.menu .search {
-	width: 100%;
-	height: 50px;
+.menu .social-menu {
+	width: 90%;
+	height: 150px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-}
-
-.menu .search .search-content {
-	width: 210px;
-	color: var(--blue);
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
-	margin: 5px 0;
-	padding: 5px 2px;
-	border-radius: 5px;
-	transition: .5s all ease-in-out;
 }
 
-.menu .search .search-content>i {
-	font-size: 25px;
-	width: 50px;
-	text-align: center;
-}
-
-.menu .search .search-content>input {
-	height: 80%;
-	width: 100px;
-	border: none;
-	border-bottom: 1px solid var(--blue);
-	background: none;
-	color: var(--blue);
-	outline: none;
-}
-
-.menu .search .search-content>button {
-	outline: none;
-	border: 1px solid var(--blue);
-	background: none;
-	color: var(--blue);
-	padding: 10px;
+.menu .social-menu a {
+	text-decoration: none;
 	border-radius: 10px;
-	transition: .5s all ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
 }
+
+.menu .social-menu a i,
+.menu .social-menu a svg {
+	padding: 10px;
+	font-size: 2rem;
+	border-radius: 10px;
+	transition: .7s all;
+	z-index: 10;
+}
+
+.menu .social-menu a:hover i {
+	color: var(--gray);
+}
+
+.menu .social-menu a:hover svg {
+	color: var(--gray);
+}
+
+.hover-effect::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: .7s all;
+	opacity: 0;
+}
+
+.hover-effect:hover:after {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(11);
+}
+
+
+.menu .social-menu .instagram {
+	color: crimson;
+}
+
+.menu .social-menu .instagram::after {
+	background-color: crimson;
+}
+
+.menu .social-menu .linkedin {
+	color: #0e76a8;
+}
+
+.menu .social-menu .linkedin::after {
+	background-color: #0e76a8;
+}
+
+.menu .social-menu .gmail {
+	color: #DB4437;
+}
+
+.menu .social-menu .gmail::after {
+	background-color: #DB4437;
+}
+
 
 .line {
 	position: relative;
