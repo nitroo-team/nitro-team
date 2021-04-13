@@ -42,7 +42,7 @@ function Menu(props) {
                     <i className="fa fa-linkedin"></i>
                 </a>
                 <a href="https://www.instagram.com/nitroo_team" className="instagram hover-effect">
-                    <InstagramIcon />
+                    <InstagramIcon  />
                 </a>
                 <a href="#" className="gmail hover-effect">
                     <i className="fa fa-google"></i>
