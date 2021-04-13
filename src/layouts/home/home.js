@@ -2,7 +2,6 @@ import React from 'react';
 import './home.css';
 
 //components
-import Slider from '../../components/slider/slider'
 import Framework from '../../components/framework/framework'
 import Website from '../../components/website/website'
 
@@ -18,14 +17,26 @@ import personal_poster from '../../images/website-poster/personal-poster.png'
 import film_music_poster from '../../images/website-poster/aparat.png'
 import social_poster from '../../images/website-poster/social-poster.png'
 import many_stuff_poster from '../../images/website-poster/many-stuff-poster.png'
+import header from '../../images/header-img.jpg';
 
 
 function Home(props) {
 
     return (
         <main className="home">
+            <header>
+                <img src={header} alt="header-image" />
+                <div className="content-header-r">
+                    <h2>نیترو تیم</h2>
+                    <h3>انجام کلیه ی خدمات  ساخت وبسایت ، سرویس وبسایت ، پیج های اجتماعی و ... </h3>
+                </div>
+                <div className="content-header-l">
+                    <h2>Nitro Team</h2>
+                    <h3>Performing all services of website construction, website service, social pages, etc</h3>
+                </div>
+            </header>
+
             <section className="home-content">
-                <Slider />
 
                 <span className="line"></span>
 
