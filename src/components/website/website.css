@@ -1,0 +1,75 @@
+.website-link {
+	width: 32%;
+	min-width: 200px;
+	max-width: 300px;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	color: var(--blue);
+	transition: .5s all;
+	margin: 10px 5px;
+	animation: come 1.5s ease-in-out both;
+	border-radius: 10px;
+}
+
+.website-link .website-img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.website-link .website-img::before {
+	content: "";
+	width: 5px;
+	height: 300%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(225, 225, 225, .9);
+	z-index: 5;
+	transform: rotate(-45deg);
+	box-shadow: 5px 5px 10px 10px rgba(225, 225, 225, .8), -5px -5px 10px 10px rgba(225, 225, 225, .8);
+	animation: shadow 6s linear both infinite;
+}
+
+.website-link .website-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.website-link h4 {
+	opacity: 0;
+	z-index: 10;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+	color: var(--gray);
+}
+
+.website-link:hover {
+	text-decoration: none;
+}
+
+.website-link:hover .website-img::before{
+	display: none;
+}
+
+.website-link:hover .website-img img {
+	filter: brightness(70%) blur(1px);
+}
+
+.website-link:hover h4 {
+	opacity: 1;
+}

@@ -41,7 +41,7 @@
 .framework-link .framework-img::after {
 	content: "";
 	width: 5px;
-	height: 200%;
+	height: 300%;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -75,7 +75,7 @@
 @keyframes shadow {
 	0% {
 		left: -100%;
-		bottom: -450%;
+		bottom: -550%;
 	}
 
 	30% {
