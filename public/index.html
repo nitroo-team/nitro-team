@@ -3,20 +3,38 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" href="%PUBLIC_URL%/nitro-team-icon.ico" />
+	<link rel="icon" href="%PUBLIC_URL%/images/min-logo.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="theme-color" content="#000000" />
-	<meta name="description" content="نیترو تیم - طراحی انواع سایت و اپلیکیشن" />
-	<link rel="apple-touch-icon" href="%PUBLIC_URL%/nitro-team.png" />
+	<meta name="theme-color" content="#cecece" />
+	<meta name="description"
+		content="نیترو تیم - طراحی و ساخت انواع سایت و اپلیکیشن (سرویس و ضمانت سایت ، ساخت و مدیریت پیج ها و ضفحات اجتماعی)" />
+	<link rel="apple-touch-icon" href="%PUBLIC_URL%/images/min-logo.png" />
 	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<title>نیترو تیم</title>
 </head>
 
 <body dir="rtl">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root"></div>
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('./worker.js').then((registration) => {
+					console.log('Worker registration successful', registration.scope);
+				}, (err) => {
+					console.log('Worker registration failed', err);
+				}).catch((err) => {
+					console.log(err);
+				});
+			});
+		} else {
+			console.log('Service Worker is not supported by browser.');
+		}
+	</script>
 </body>
 
 </html>

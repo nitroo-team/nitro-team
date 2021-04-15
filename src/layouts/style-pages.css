@@ -1,0 +1,35 @@
+.page {
+	width: calc(100% - 60px);
+    height: 100%;
+	margin-right: 60px;
+	box-sizing: border-box;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	display: flex;
+    flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.page .page-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.page .img-page {
+	width: 90%;
+	height: auto;
+	border-radius: 10px;
+}
+
+
+.page .text-page {
+	width: 100%;
+	text-align: center;
+}

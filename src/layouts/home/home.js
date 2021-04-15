@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './home.css';
 
 //components
@@ -18,14 +18,20 @@ import film_music_poster from '../../images/website-poster/aparat.png'
 import social_poster from '../../images/website-poster/social-poster.png'
 import many_stuff_poster from '../../images/website-poster/many-stuff-poster.png'
 import header from '../../images/header-img.jpg';
+import header_phone from '../../images/header-phone.jpg';
 
 
 function Home(props) {
 
+    let [ww, setWw] = useState(window.innerWidth)
+
+    window.onresize = (e) => { 
+        setWw(e.target.innerWidth)
+    }
     return (
         <main className="home">
             <header>
-                <img src={header} alt="header-image" />
+                <img src={((ww) > 600) ? header : header_phone} alt="header-image" />
                 <div className="content-header-r">
                     <h2>نیترو تیم</h2>
                     <h3>انجام کلیه ی خدمات  ساخت وبسایت ، سرویس وبسایت ، پیج های اجتماعی و ... </h3>
@@ -35,6 +41,10 @@ function Home(props) {
                     <h3>Performing all services of website construction, website service, social pages, etc</h3>
                 </div>
             </header>
+
+            <div className="title-top title none">
+                <h3></h3>
+            </div>
 
             <section className="home-content">
 
@@ -48,18 +58,17 @@ function Home(props) {
                         <h4>سمت کاربر:</h4>
                     </div>
                     <section className="framework">
-
-                        <Framework link="/" img={html_css_poster} name="html و css" description="دو فناوری اصلی برای ایجاد صفحات وب هستند. HTML ساختار صفحه، CSS (بصری و شنوایی) طراحی را همراه با گرافیک دارد" delay={0} />
-                        <Framework link="/" img={js_poster} name="جاوا اسکریپت" description="جایی که HTML و CSS ساختار اولیه و ظاهر صفحات وب را تعیین می‌کنند، جاوا اسکریپت نحوه عملکرد صفحات وب را کنترل می‌کند." delay={.2} />
-                        <Framework link="/" img={react_poster} name="ری اکت" description=" کتابخانه متن‌باز جاوااسکریپت برای ساخت رابط‌های کاربری و اجزای(Component) صفحات وب است." delay={.4} />
-                        <Framework link="/" img={vue_poster} name="ویو" description="ویو یک فریم‌ورک متن باز زبان javascript است که از آن برای توسعه رابط کاربری استفاده می­‌شود." delay={.6} />
+                        <Framework link="/html-css" img={html_css_poster} name="html و css" description="دو فناوری اصلی برای ایجاد صفحات وب هستند. HTML ساختار صفحه، CSS (بصری و شنوایی) طراحی را همراه با گرافیک دارد" delay={0} />
+                        <Framework link="/js" img={js_poster} name="جاوا اسکریپت" description="جایی که HTML و CSS ساختار اولیه و ظاهر صفحات وب را تعیین می‌کنند، جاوا اسکریپت نحوه عملکرد صفحات وب را کنترل می‌کند." delay={.2} />
+                        <Framework link="/react" img={react_poster} name="ری اکت" description=" کتابخانه متن‌باز جاوااسکریپت برای ساخت رابط‌های کاربری و اجزای(Component) صفحات وب است." delay={.4} />
+                        <Framework link="/vue" img={vue_poster} name="ویو" description="ویو یک فریم‌ورک متن باز زبان javascript است که از آن برای توسعه رابط کاربری استفاده می­‌شود." delay={.6} />
                     </section>
                     <div className="title-sub">
                         <h4>سمت سرور:</h4>
                     </div>
                     <section className="framework">
-                        <Framework link="/" img={laravel_poster} name="لاراول" description=" لاراول فریم ورکی مبتنی بر معماری MVC است که به صورت رایگان و متن باز ارائه شده است. " delay={.8} />
-                        <Framework link="/" img={go_poster} name="گولنگ (Go)" description="گو یا گولینگ یک زبان برنامه نویسی، که توسط شرکت گوگل عرضه و ارائه شده است." delay={1} />
+                        <Framework link="/laravel" img={laravel_poster} name="لاراول" description=" لاراول فریم ورکی مبتنی بر معماری MVC است که به صورت رایگان و متن باز ارائه شده است. " delay={.8} />
+                        <Framework link="/go" img={go_poster} name="گولنگ (Go)" description="گو یا گولینگ یک زبان برنامه نویسی، که توسط شرکت گوگل عرضه و ارائه شده است." delay={1} />
                     </section>
                 </section>
 
@@ -70,15 +79,15 @@ function Home(props) {
                         <h3>انواع سایت ها و ویژگی ها</h3>
                     </div>
                     <section className="website">
-                        <Website link="/" img={shoping_poster} name="سایت فروشگاهی" delay={1} />
-                        <Website link="/" img={personal_poster} name="سایت شخصی" delay={1.2} />
-                        <Website link="/" img={film_music_poster} name="سایت فیلم و موسیقی" delay={1.4} />
-                        <Website link="/" img={social_poster} name="سایت اجتماعی" delay={1.6} />
-                        <Website link="/" img={many_stuff_poster} name="سایت چند منظوره" delay={1.8} />
+                        <Website link="/shopping-web" img={shoping_poster} name="سایت فروشگاهی" delay={1} />
+                        <Website link="/personal-web" img={personal_poster} name="سایت شخصی" delay={1.2} />
+                        <Website link="/film-music-web" img={film_music_poster} name="سایت فیلم و موسیقی" delay={1.4} />
+                        <Website link="/social-web" img={social_poster} name="سایت اجتماعی" delay={1.6} />
+                        <Website link="/multipurpose-web" img={many_stuff_poster} name="سایت چند منظوره" delay={1.8} />
                     </section>
                 </section>
             </section>
-        </main>
+        </main >
     )
 }
 

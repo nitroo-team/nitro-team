@@ -1,0 +1,124 @@
+.website-page {
+	width: calc(100% - 60px);
+	height: 100%;
+	margin-right: 60px;
+	box-sizing: border-box;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.website-page .most,
+.website-page .maybe {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 10px;
+	/* box-shadow: 1px 1px 10px #111; */
+}
+
+
+.website-page .most .title-items,
+.website-page .maybe .title-items {
+	width: 90%;
+	height: 45px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 2px solid var(--blue);
+	border-top: 2px solid var(--blue);
+	border-radius: 10px;
+	overflow: hidden;
+	transition: 1s all;
+	margin: 10px;
+	background-color: rgba(0, 0, 0, .02);
+	animation: come 1s ease-in-out both;
+}
+
+
+.website-page .most .title-items h4,
+.website-page .maybe .title-items h4 {
+	width: 100%;
+	text-align: center;
+	height: 45px;
+	margin-bottom: 10px;
+	user-select: none;
+	line-height: normal;
+	color: var(--dark);
+}
+
+.website-page .most .title-items .drop-box,
+.website-page .maybe .title-items .drop-box {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+}
+
+.website-page .most ul,
+.website-page .maybe ul {
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0;
+}
+
+.website-page .most ul li,
+.website-page .maybe ul li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 45%;
+	max-width: 300px;
+	min-width: 150px;
+	height: 50px;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 10px 0;
+	border-bottom: 1px solid var(--blue);
+	/* border-right: 1px solid var(--blue);
+	border-bottom: 1px solid var(--blue);
+	border-radius: 5px;
+	border-bottom-right-radius: 20px;
+	box-shadow: 1px 1px 3px var(--blue);
+	background-image: linear-gradient(-45deg, var(--gray), var(--blue)); */
+	transition: .5s all;
+	animation: come 1s ease-in-out both;
+}
+
+
+.website-page .most ul li i,
+.website-page .maybe ul li i {
+	font-size: 20px;
+	color: var(--blue);
+	width: 50px;
+	text-align: center;
+}
+
+.website-page .most ul li p,
+.website-page .maybe ul li p {
+	flex-grow: 1;
+	text-align: center;
+}
+
+.website-page .maybe ul li {
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 5px;
+	box-shadow: -1px -1px 3px var(--blue);
+}

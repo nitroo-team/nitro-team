@@ -69,9 +69,10 @@
 }
 
 .website-link:hover .website-img img {
-	filter: brightness(70%) blur(1px);
+	filter: brightness(60%) blur(2px);
 }
 
 .website-link:hover h4 {
 	opacity: 1;
+	color: var(--white);
 }
