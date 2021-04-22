@@ -33,3 +33,17 @@
 	width: 100%;
 	text-align: center;
 }
+
+.page  .bold-shadow {
+	box-shadow: 1px 1px 10px var(--dark);
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: var(--gray);
+	text-align: right;
+}
+
+.page  .bold-shadow  svg{
+	color: var(--blue);
+	font-size: 35px;
+}

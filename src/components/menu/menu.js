@@ -30,9 +30,9 @@ function Menu(props) {
             <div className="conetent-menu">
                 <ul>
                     <li><Link to="/" className="link"> <i className="fa fa-home"></i><p>خانه</p></Link></li>
-                    <li><Link to="/" className="link"> <i className="fa fa-archive"></i><p>پروژه های انجام شده</p></Link></li>
-                    <li><Link to="/" className="link"> <i className="fa fa-check-square-o"></i><p>طرح حای پیشنهادی</p></Link></li>
-                    <li><Link to="/" className="link"> <i className="fa fa-street-view"></i><p>درباره ما</p></Link></li>
+                    <li><Link to="/work-done" className="link"> <i className="fa fa-archive"></i><p>پروژه های انجام شده</p></Link></li>
+                    <li><Link to="/proposals" className="link"> <i className="fa fa-check-square-o"></i><p>طرح های پیشنهادی</p></Link></li>
+                    <li><Link to="/about-us" className="link"> <i className="fa fa-street-view"></i><p>درباره ما</p></Link></li>
                 </ul>
             </div>
             <span className="line"></span>
@@ -40,11 +40,14 @@ function Menu(props) {
                 <a rel="noreferrer" href="https://www.linkedin.com/in/nitro-team" target="_blank" className="linkedin hover-effect">
                     <i className="fa fa-linkedin"></i>
                 </a>
-                <a rel="noreferrer" href="https://www.instagram.com/nitroo_team" className="instagram hover-effect">
+                <a rel="noreferrer" href="https://www.instagram.com/nitroo_team" className="instagram hover-effect" target="_blank">
                     <InstagramIcon />
                 </a>
-                <a rel="noreferrer" href="#" className="gmail hover-effect">
+                <a rel="noreferrer" href="mailto:nitroteam323@gmail.com" className="gmail hover-effect">
                     <i className="fa fa-google"></i>
+                </a>
+                <a rel="noreferrer" href="https://api.whatsapp.com/send/?phone=989917858058&text&app_absent=0&lang=fa" target="_blank" className="whatsapp hover-effect">
+                    <i className="fa fa-whatsapp"></i>
                 </a>
             </div>
         </main>

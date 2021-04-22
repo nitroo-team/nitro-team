@@ -139,7 +139,7 @@
 
 .menu .social-menu {
 	width: 90%;
-	height: 150px;
+	height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -215,6 +215,14 @@
 
 .menu .social-menu .gmail::after {
 	background-color: #DB4437;
+}
+
+.menu .social-menu .whatsapp {
+	color: #25D366;
+}
+
+.menu .social-menu .whatsapp::after {
+	background-color: #25D366;
 }
 
 

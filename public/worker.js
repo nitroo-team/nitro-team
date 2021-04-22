@@ -1,43 +1,40 @@
 
-var CACHE_NAME = 'Nitro-team';
-var urlsToCache = [
-    '/'
+const CACHE_NAME = 'Nitro-team';
+const staticCache = [
+    '/',
+    'index.html'
 ];
 
-self.addEventListener('install', event => {
-    event.waitUntil(
+self.addEventListener('install', e => {
+    e.waitUntil(
         caches.open(CACHE_NAME)
-            .then(function (cache) {
-                console.log("Opened cache");
-                return cache.addAll(urlsToCache);
-            })
-    );
+            .then(cache => cache.addAll(staticCache))
+    )
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(function (response) {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
-            }
-            )
-    );
-});
+self.addEventListener('fetch', e => {
+    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') {
+        e.waitUntil(
+            caches.open(CACHE_NAME).then(cache => {
+                return cache.match(e.request).then(res => {
+                    const updateRes = fetch(e.request).then(newRes => {
+                        cache.put(e.request, newRes.clone());
+                        return newRes;
+                    })
 
-self.addEventListener('activate', event => {
-    var cacheWhitelist = ['Nitro-team'];
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
+                    return res || updateRes;
                 })
-            );
+            })
+        )
+    }
+});
+
+self.addEventListener('activate', e => {
+    const cacheCleaned = caches.keys().then((keys) => {
+        keys.forEach(key => {
+            if (key !== CACHE_NAME) return caches.delete(key);
         })
-    );
+    })
+
+    e.waitUntil(cacheCleaned);
 });

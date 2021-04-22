@@ -30,7 +30,7 @@ export function DropBox(props) {
                     if (open) drop.current.style.height = `350px`;
                     else drop.current.style.height = `45px`;
                 }}
-            >{props.name}</h4>
+            >{props.name} <i className="fa fa-sort-desc"></i></h4>
             <div className="drop-box">
                 <ul>
                     {props.children}

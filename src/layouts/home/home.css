@@ -7,6 +7,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	overflow-y: auto;
+	overflow-x: hidden;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -147,6 +148,63 @@
 
 
 
+.home .home-content .nitro-team {
+	box-shadow: 1px 1px 10px var(--dark);
+	border-radius: 10px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.home .home-content .nitro-team ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+}
+
+.home .home-content .nitro-team ul li {
+	margin: 5px 0;
+	width: 90%;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px 5px;
+}
+
+.home .home-content .nitro-team ul li:nth-child(odd) {
+	background-color: var(--blue);
+}
+
+
+.home .home-content .nitro-team ul li:nth-child(even) {
+	background-color: var(--gray);
+}
+
+.home .home-content .festival {
+	width: 100%;
+	background-image: linear-gradient(45deg, #E55D87, #FF512F, #F09819, #EA384D, #3CA55C, #00CDAC, #5FC3E4, #ec008c, #fc6767, #DA22FF, #E684AE, #26a0da);
+	background-size: 400% 400%;
+	animation: bg-color-gradient 240s ease-in-out both infinite;
+	border-radius: 10px;
+	
+}
+
+
+@keyframes bg-color-gradient {
+	0% {
+		background-position: 0% 100%;
+	}
+
+	50% {
+		background-position: 100% 0%;
+	}
+
+	100% {
+		background-position: 0% 100%;
+	}
+}
 
 
 
@@ -154,7 +212,7 @@
 
 	.home header .content-header-r h3,
 	.home header .content-header-l h3 {
-        font-size: 1rem;
+		font-size: 1rem;
 	}
 }
 
@@ -162,20 +220,21 @@
 
 	.home header .content-header-r h3 {
 		display: none;
-        
-    }
+
+	}
 
 	.home header .content-header-l h3 {
 		display: none;
 	}
 
 	.home header .content-header-l {
-        top: 0;
+		top: 0;
 		height: 50px;
 	}
+
 	.home header .content-header-l h2 {
-        font-size: 1.5rem;
-    }
+		font-size: 1.5rem;
+	}
 
 	.home header .content-header-r {
 		bottom: 0%;
